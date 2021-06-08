@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { HomeContainer } from "./Home.styled";
 import { Input, Typography } from "antd";
 
 const Home = () => {
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const { Search } = Input;
   const { Text } = Typography;
 
-  const onSearch = (searchQuery: string) => {
-    console.log(searchQuery);
+  const onSearch = async (searchQuery: string) => {
+    history.push(`/repos/${searchQuery}`)
   }
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
