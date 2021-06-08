@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { HomeContainer } from "./Home.styled";
 import { Input, Typography } from "antd";
 
-const Home = () => {
+const Home: FC = () => {
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
