@@ -2,6 +2,7 @@ import React, { ReactChildren, ReactChild } from 'react';
 import { LayoutContainer } from './Layout.styled';
 import { PageHeader } from "antd"; 
 import { Link } from 'react-router-dom';
+import "./Layout.css";
 
 interface LayoutProps {
   children: ReactChildren | ReactChild;

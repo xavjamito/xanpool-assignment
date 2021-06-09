@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { HomeContainer } from "./Home.styled";
 import { Input, Typography } from "antd";
+import "./Home.css";
 
 const Home: FC = () => {
   const history = useHistory();

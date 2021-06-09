@@ -3,9 +3,10 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { getUserRepos } from "../api/UserAPI";
 import { Parameter, Repo } from "../../models/types";
-import { Table, Spin } from 'antd';
+import { Table, Spin, Typography } from 'antd';
 
 const Repos: FC = () => {
+  const { Text } = Typography;
   const { username } = useParams<Parameter>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [repos, setRepos] = useState<Repo[]>([]);
@@ -14,7 +15,9 @@ const Repos: FC = () => {
     const fetchUserRepos = async () => {
       setIsLoading(true);
       const userRepos = await getUserRepos(username);
-      setRepos(userRepos);
+      if (userRepos.length) {
+        setRepos(userRepos);
+      } 
       setIsLoading(false);
     }
     fetchUserRepos();
@@ -42,7 +45,7 @@ const Repos: FC = () => {
       key: 'link',
     },
     {
-      title: 'View repo details',
+      title: 'View repo',
       dataIndex: 'info',
       key: 'info',
     },
@@ -64,7 +67,13 @@ const Repos: FC = () => {
         isLoading ? (
           <Spin />
         ) : (
-          <Table key="key" columns={columns} dataSource={repoData} />
+          repos.length !== 0 ? 
+          (
+            <Table key="key" columns={columns} dataSource={repoData} />
+          )
+          : (
+            <Text type="danger">User does not exist.</Text>
+          )
         )
       }
     </div>

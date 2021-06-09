@@ -1,0 +1,7 @@
+.ant-page-header-ghost {
+  background: linear-gradient(to left, #347fe0, #6f65e9 49%, #6931d4) !important;
+}
+
+.ant-page-header-heading-title > a {
+  color: #FFF !important;
+}
