@@ -1,0 +1,10 @@
+.ant-btn-primary {
+  background: linear-gradient(278deg,#347fe0,#6f65e9 20%,#7f47d3);
+  border-color: #FFF;
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  opacity: 0.8;
+  background: linear-gradient(278deg,#347fe0,#6f65e9 20%,#7f47d3);
+  border-color: #FFF;
+}
