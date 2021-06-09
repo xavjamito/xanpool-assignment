@@ -31,29 +31,29 @@ const RepoInfo: FC = () => {
 
   const columns = [
     {
-      title: '',
-      dataIndex: 'icon',
-      key: 'icon',
+      title: "",
+      dataIndex: "icon",
+      key: "icon",
     },
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
     },
     {
-      title: 'Size (kb)',
-      dataIndex: 'size',
-      key: 'size',
+      title: "Size (kb)",
+      dataIndex: "size",
+      key: "size",
     },
     {
-      title: 'View file',
-      dataIndex: 'view',
-      key: 'view',
+      title: "View file",
+      dataIndex: "view",
+      key: "view",
     },
     {
-      title: 'Github Link',
-      dataIndex: 'link',
-      key: 'link',
+      title: "Github Link",
+      dataIndex: "link",
+      key: "link",
     },
   ];
 
@@ -62,13 +62,18 @@ const RepoInfo: FC = () => {
     icon: repoFile.type === "dir" ? <FolderOutlined /> : <FileOutlined />,
     name: repoFile.name,
     size: repoFile.size,
-    view: <a
-            href={repoFile.download_url}
-            target="__blank"
-            title={repoFile.name}
-          >
-            View file
-          </a>,
+    view: repoFile.type === "file" ? 
+          (
+            <a
+              href={repoFile.download_url}
+              target="__blank"
+              title={repoFile.name}
+            >
+              View file
+            </a>
+          ) : (
+            <span>Cannot view folders</span>
+          ),
     link: repoFile.html_url,
   }));
 

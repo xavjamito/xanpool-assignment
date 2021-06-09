@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { getUserRepos } from "../api/UserAPI";
 import { Parameter, Repo } from "../../models/types";
-import { Table, Spin, Typography } from 'antd';
+import { Table, Spin, Typography } from "antd";
 
 const Repos: FC = () => {
   const { Text } = Typography;
@@ -25,29 +25,29 @@ const Repos: FC = () => {
 
   const columns = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
     },
     {
-      title: 'Description',
-      dataIndex: 'description',
-      key: 'description',
+      title: "Description",
+      dataIndex: "description",
+      key: "description",
     },
     {
-      title: 'Starred Count',
-      dataIndex: 'starred',
-      key: 'starred',
+      title: "Starred Count",
+      dataIndex: "starred",
+      key: "starred",
     },
     {
-      title: 'Github Link',
-      dataIndex: 'link',
-      key: 'link',
+      title: "Github Link",
+      dataIndex: "link",
+      key: "link",
     },
     {
-      title: 'View repo',
-      dataIndex: 'info',
-      key: 'info',
+      title: "View repo",
+      dataIndex: "info",
+      key: "info",
     },
   ];
 
